@@ -9,7 +9,7 @@ __kernel void add1(__global float* a, __global float* b, __global float* c, __gl
 	
 	uint i = get_global_id(0);
 	c[i] = a[i] + b[i];
-	d[i] = (__global half*)a[i];
-	e[i] = b1[i];
+	d[i] = (__global half)a[i];
+	e = (__global half*)b;
 	
 }
