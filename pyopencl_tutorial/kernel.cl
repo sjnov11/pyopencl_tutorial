@@ -3,13 +3,13 @@
 
 __kernel void add1(__global float* a, __global float* b, __global float* c) 
 { 
-	__global half* a1 = (__global half*)a;
-	__global half* b1 = (__global half*)b;
+	__global half* a1 = convert_half(a);
+	__global half* b1 = convert_half(b);
 	__global half* c1;
 
 	printf("fuck\n", a[0]);
 	printf("%f\n", a[0]);
 	uint i = get_global_id(0);
-	c[i] = (__global half)a[i];
+	c[i] = a1[i];
 	
 }
