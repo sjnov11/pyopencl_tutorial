@@ -3,8 +3,8 @@
 
 __kernel void add1(__global float* a, __global float* b, __global float* c) 
 { 
-	__global half* a1 = (half*)a;
-	__global half* b1 = (half*)b;
+	__global half* a1 = (__global half*)a;
+	__global half* b1 = (__global half*)b;
 	__global half* c1;
 
 	printf("fuck\n", a[0]);
