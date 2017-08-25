@@ -10,6 +10,6 @@ __kernel void add1(__global float* a, __global float* b, __global float* c)
 	printf("fuck\n", a[0]);
 	printf("%f\n", a[0]);
 	uint i = get_global_id(0);
-	c[i] = (__global float)a[i];
+	c[i] = (__global half)a[i];
 	
 }
