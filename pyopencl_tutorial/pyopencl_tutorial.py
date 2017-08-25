@@ -27,7 +27,7 @@ class CL:
         self.dest_buf = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.b.nbytes)
 
     def execute(self):
-        self.program.part1(self.queue, self.a.shape, None, self.a_buf, self.b_buf, self.dest_buf)
+        self.program.add1(self.queue, self.a.shape, None, self.a_buf, self.b_buf, self.dest_buf)
         c = numpy.empty_like(self.a)
         cl.enqueue_read_buffer(self.queue, self.dest_buf, c).wait()
         print ("a", self.a)
