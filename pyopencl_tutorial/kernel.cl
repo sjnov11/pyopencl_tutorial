@@ -1,5 +1,5 @@
 #pragma OPENCL EXTENSION cl_khr_fp16 : enable
-#pragma OPENCL EXTENSION cl_printf : enable
+#pragma OPENCL EXTENSION cl_arm_printf : enable
 
 __kernel void add1(__global float* a, __global float* b, __global float* c) 
 { 
