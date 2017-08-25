@@ -19,7 +19,7 @@ class CL:
 
         #initialize client side (CPU) arrays
         self.a = numpy.array(range(10), dtype=numpy.float32)
-        self.b = numpy.array(range(10), dtype=numpy.float32)
+        self.b = numpy.array(range(10), dtype=numpy.float32)        
 
         #create OpenCL buffers
         self.a_buf = cl.Buffer(self.ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=self.a)
@@ -28,7 +28,8 @@ class CL:
 
     def execute(self):
         self.program.add1(self.queue, self.a.shape, None, self.a_buf, self.b_buf, self.dest_buf)
-        c = numpy.empty_like(self.a)
+        #c = numpy.empty_like(self.a)
+        c = numpy.empty_like(numpy.array(range(10), module_type=numpy.float16))
         cl.enqueue_read_buffer(self.queue, self.dest_buf, c).wait()
         print ("a", self.a)
         print ("b", self.b)
