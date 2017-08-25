@@ -9,6 +9,5 @@ __kernel void add1(__global float* a, __global float* b, __global float* c)
 
 	uint i = get_global_id(0);
 	c1[i] = a1[i] + b1[i];
-
-	c = (__global float*)c1;
+	c[i] = (__global float*)c1;
 }
