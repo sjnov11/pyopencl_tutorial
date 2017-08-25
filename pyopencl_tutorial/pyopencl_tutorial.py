@@ -10,7 +10,7 @@ class CL:
         #read in the OpenCL source file as a string
         f = open(filename, 'r')
         fstr = "".join(f.readlines())
-        print(fstr)
+        #print(fstr)
         #create the program
         self.program = cl.Program(self.ctx, fstr).build()
 
