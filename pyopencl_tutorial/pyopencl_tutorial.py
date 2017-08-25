@@ -37,6 +37,6 @@ class CL:
 
 if __name__ == "__main__":
     example = CL()
-    example.loadProgram("part1.cl")
+    example.loadProgram("kernel.cl")
     example.popCorn()
     example.execute()
