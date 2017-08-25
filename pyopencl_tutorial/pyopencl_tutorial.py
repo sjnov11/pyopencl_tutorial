@@ -28,7 +28,7 @@ class CL:
         self.d_buf = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.b.nbytes)
         self.e_buf = cl.Buffer(self.ctx, mf.WRITE_ONLY, self.b.nbytes)
     def execute(self):
-        self.program.add1(self.queue, self.a.shape, None, self.a_buf, self.b_buf, self.dest_buf)
+        self.program.add1(self.queue, self.a.shape, None, self.a_buf, self.b_buf, self.dest_buf, self.d_buf, self.e_buf)
         #c = numpy.empty_like(self.a)
         c = numpy.empty_like(numpy.array(range(10), dtype=numpy.float32))
         d = numpy.empty_like(numpy.array(range(10), dtype=numpy.float16))
